@@ -59,7 +59,7 @@
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez tous les message des utilisatrices
-                        auxquel est abonnée l'utilisatrice XXX
+                        auxquel est abonnée l'utilisatrice <?php echo $user["alias"]; ?>
                         (n° <?php echo $userId ?>)
                     </p>
 
@@ -99,7 +99,7 @@
                 ?>                
                 <article>
                     <h3>
-                        <time datetime='2020-02-01 11:12:13' >31 février 2010 à 11h12</time>
+                        <time datetime='2020-02-01 11:12:13'>31 février 2010 à 11h12</time>
                     </h3>
                     <address>par AreTirer</address>
                     <div>
