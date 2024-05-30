@@ -96,30 +96,27 @@
                  * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
                  * A vous de retrouver comment faire la boucle while de parcours...
                  */
+                while ($message = $lesInformations->fetch_assoc())
+                {
+                    echo "<pre>" . print_r($message, true) . "</pre>";
                 ?>                
                 <article>
                     <h3>
-                        <time datetime='2020-02-01 11:12:13'>31 février 2010 à 11h12</time>
+                        <time datetime='2020-02-01 11:12:13'><?php echo $message["created"];?></time>
                     </h3>
-                    <address>par AreTirer</address>
+                    <address><?php echo $message ["author_name"]; ?></address>
                     <div>
-                        <p>Ceci est un paragraphe</p>
-                        <p>Ceci est un autre paragraphe</p>
-                        <p>... de toutes manières il faut supprimer cet 
-                            article et le remplacer par des informations en 
-                            provenance de la base de donnée</p>
+                        <p><?php echo $message["content"]; ?></p>
                     </div>                                            
                     <footer>
-                        <small>♥ 132</small>
-                        <a href="">#lorem</a>,
-                        <a href="">#piscitur</a>,
+                        <small>♥<?php echo $message["like_number"]; ?></small>
+                        <a href=""><?php echo $message["taglist"]; ?></a>
                     </footer>
                 </article>
                 <?php
+                }
                 // et de pas oublier de fermer ici vote while
                 ?>
-
-
             </main>
         </div>
     </body>
