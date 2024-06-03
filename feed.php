@@ -28,11 +28,6 @@
         <div id="wrapper">
             <?php
             /**
-             * Cette page est TRES similaire à wall.php. 
-             * Vous avez sensiblement à y faire la meme chose.
-             * Il y a un seul point qui change c'est la requete sql.
-             */
-            /**
              * Etape 1: Le mur concerne un utilisateur en particulier
              */
             $userId = intval($_GET['user_id']);
@@ -52,15 +47,17 @@
                 $laQuestionEnSql = "SELECT * FROM `users` WHERE id= '$userId' ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 $user = $lesInformations->fetch_assoc();
-                //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                 echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message des utilisatrices
-                        auxquel est abonnée l'utilisatrice <?php echo $user["alias"]; ?>
-                        (n° <?php echo $userId ?>)
+                    <p>Sur cette page vous trouverez tous les messages des utilisatrices
+                        auxquel est abonnée l'utilisatrice 
+                        <a href="wall.php?user_id=<?php echo $user['id']; ?>">
+                        <?php echo $user["alias"]; ?>
+                        </a>
+                        (n° <?php echo $user["id"]; ?>)
                     </p>
 
                 </section>
@@ -73,7 +70,8 @@
                 $laQuestionEnSql = "
                     SELECT posts.content,
                     posts.created,
-                    users.alias as author_name,  
+                    users.alias as author_name, 
+                    users.id as user_id, 
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM followers 
@@ -92,19 +90,19 @@
                     echo("Échec de la requete : " . $mysqli->error);
                 }
 
-                /**
-                 * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
-                 * A vous de retrouver comment faire la boucle while de parcours...
-                 */
                 while ($message = $lesInformations->fetch_assoc())
                 {
-                    echo "<pre>" . print_r($message, true) . "</pre>";
-                ?>                
+                    //echo "<pre>" . print_r($message, 1) . "</pre>";
+                ?>            
                 <article>
                     <h3>
                         <time datetime='2020-02-01 11:12:13'><?php echo $message["created"];?></time>
                     </h3>
-                    <address><?php echo $message ["author_name"]; ?></address>
+                    <address>
+                        <a href="wall.php?user_id=<?php echo $message['user_id']; ?>">
+                        <?php echo $message["author_name"]; ?>
+                        </a>
+                    </address>
                     <div>
                         <p><?php echo $message["content"]; ?></p>
                     </div>                                            
@@ -113,10 +111,7 @@
                         <a href=""><?php echo $message["taglist"]; ?></a>
                     </footer>
                 </article>
-                <?php
-                }
-                // et de pas oublier de fermer ici vote while
-                ?>
+                <?php } ?>
             </main>
         </div>
     </body>
