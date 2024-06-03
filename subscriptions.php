@@ -46,16 +46,14 @@
                 $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
                 // Etape 3: récupérer le nom de l'utilisateur
                 $laQuestionEnSql = "
-                    SELECT users.* 
+                    SELECT users.*
                     FROM followers 
                     LEFT JOIN users ON users.id=followers.followed_user_id 
                     WHERE followers.following_user_id='$userId'
                     GROUP BY users.id
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
-                // Etape 4: à vous de jouer
-                //@todo: faire la boucle while de parcours des abonnés et mettre les bonnes valeurs ci dessous 
-                
+                // Etape 4: à vous de jouer   
                 while ($post = $lesInformations->fetch_assoc())
                 {
                 ?> 
