@@ -33,7 +33,6 @@
                     <p>Sur cette page vous trouverez la liste des personnes qui
                         suivent les messages de l'utilisatrice
                         n° <?php echo intval($_GET['user_id']) ?></p>
-
                 </section>
             </aside>
             <main class='contacts'>
@@ -51,9 +50,7 @@
                     GROUP BY users.id
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
-                // Etape 4: à vous de jouer
-                //@todo: faire la boucle while de parcours des abonnés et mettre les bonnes valeurs ci dessous 
-                
+                // Etape 4: à vous de jouer                
                 while ($post = $lesInformations->fetch_assoc()) 
                 {
                 ?>    
