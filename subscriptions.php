@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
+            <img src="profilepic.jpg" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php?user_id=5">Mur</a>
@@ -27,7 +27,7 @@
         </header>
         <div id="wrapper">
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="sunnyGin.jpg" alt="Portrait de l'utilisatrice" class="user-picture"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez la liste des personnes dont
@@ -58,7 +58,7 @@
                 {
                 ?> 
                 <article>
-                    <img src="user.jpg" alt="blason"/>
+                    <img src="chicken.jpg" alt="blason" class="user-picture"/>
                     <h3><?php echo $post["alias"]; ?></h3>
                     <p><?php echo $post["id"]; ?></p>                    
                 </article>
