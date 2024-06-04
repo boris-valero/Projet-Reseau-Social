@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,7 +9,7 @@
     </head>
     <body>
         <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
+            <img src="profilepic.jpg" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php?user_id=5">Mur</a>
@@ -52,18 +53,35 @@
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 $user = $lesInformations->fetch_assoc();
                 //echo "<pre>" . print_r($user, 1) . "</pre>";
+
+                // Condition to check if the POST variable is defined and what it contains
+                if (isset($_POST['message'])) {
+                    echo "<pre>" . print_r($_POST, 1) . "</pre>";
+                    echo "<pre>" . print_r($_SESSION, 1) . "</pre>";
+                    // 1. Write an SQL query to add a line in the table posts
+                    // quoting syntax: single instead of hard coding a value (user_id=8 for example)
+                    // quoting syntax: double quote to end the string
+                    $insertQuerySql = "INSERT INTO posts (user_id, content, created) VALUES ('".$_SESSION['connected_id']."', '".$_POST['message']."', NOW())";
+                    
+                    // 2. Start the query
+                    $mysqli->query($insertQuerySql);
+                }
                 ?>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="sunnyGin.jpg" alt="Portrait de l'utilisatrice" class="user-picture"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez tous les messages de l'utilisatrice : <?php echo $user["alias"]; ?>
                         (n° <?php echo $userId ?>)
                     </p>
-                     <form action="user.php" method="post">
-                        <label for name="message">Enter your message</label>
+                    <!-- condition for the form to appear only if the user is connected to his / her wall-->
+                    <?php if ($_GET['user_id'] == $_SESSION['connected_id']) { ?>
+                     <form method="post" class="formMessage">
+                        <label name="message"class="enterYourMessage">Enter your message</label>
                         <input type="text" name="message" />
+                        <button type="submit" class="buttonFormMessage">Submit</button>
                     </form> 
-                    <button>Submit</button>
+                    <?php } ?>
+                    
                 </section>
             </aside>
             <main>
@@ -106,7 +124,7 @@
                         </div>                                            
                         <footer>
                             <small>♥ 132</small>
-                            <a href="">#<?php echo $post ["taglist"]; ?></a>,
+                            <a href=""><strong>#<?php echo $post ["taglist"]; ?></strong></a>,
                         </footer>
                     </article>
                 <?php } ?>
