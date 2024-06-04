@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
+            <img src="profilepic.jpg" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php?user_id=5">Mur</a>
@@ -47,9 +47,9 @@
                 $laQuestionEnSql = "SELECT * FROM `users` WHERE id= '$userId' ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 $user = $lesInformations->fetch_assoc();
-                echo "<pre>" . print_r($user, 1) . "</pre>";
+                //echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="sunnyGin.jpg" alt="Portrait de l'utilisatrice" class="user-picture"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez tous les messages des utilisatrices
@@ -108,7 +108,7 @@
                     </div>                                            
                     <footer>
                         <small>♥<?php echo $message["like_number"]; ?></small>
-                        <a href=""><?php echo $message["taglist"]; ?></a>
+                        <a href=""><strong><?php echo $message["taglist"]; ?></strong></a>
                     </footer>
                 </article>
                 <?php } ?>
