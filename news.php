@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <a href='admin.php'><img src="resoc.jpg" alt="Logo de notre réseau social"/></a>
+            <a href='admin.php'><img src="profilepic.jpg" alt="Logo de notre réseau social"/></a>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php?user_id=5">Mur</a>
@@ -26,7 +26,7 @@
         </header>
         <div id="wrapper">
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="sunnyGin.jpg" alt="Portrait de l'utilisatrice" class="user-picture"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages de
@@ -113,8 +113,7 @@
                             <small>♥<?php
                             echo $post['like_number'];
                             ?> </small>
-                            <a href=""><?php echo "#", $post['taglist'] ?></a>,
-
+                            <a href=""><strong><?php echo "#", $post['taglist'] ?></strong></a>,
                         </footer>
                     </article>
                     <?php } ?>
