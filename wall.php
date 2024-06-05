@@ -116,14 +116,19 @@
                                    
                     <article>
                         <h3>
-                            <time datetime='2020-02-01 11:12:13' >31 février 2010 à 11h12</time>
+                            <time datetime='2020-02-01 11:12:13' ><?php echo $post["created"]; ?></time>
                         </h3>
-                        <address>Par <?php echo $post["author_name"]; ?></address>
+                        <address>
+                            <strong>
+                                <em>Par <?php echo $post["author_name"]; ?>
+                                </em>
+                            </strong>
+                        </address>
                         <div>
                             <p><?php echo $post["content"]; ?></p>
                         </div>                                            
                         <footer>
-                            <small>♥ 132</small>
+                            <small>❤️ <?php echo $post["like_number"]; ?></small>
                             <a href=""><strong>#<?php echo $post ["taglist"]; ?></strong></a>,
                         </footer>
                     </article>
