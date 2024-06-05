@@ -97,7 +97,11 @@
                     ?>
                     <article>
                         <h3>
+                            <strong>
+                                <em>
                                 <?php echo $user["alias"]; ?>
+                                </em>
+                            </strong>
                         </h3>
                         <p>id:<?php echo $user["id"]; ?>
                         </p>
