@@ -7,14 +7,16 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #27296d;
+  font-weight: 900;
+  font-size: 18px;
 }
 a:hover {
   text-decoration: underline;
 }
 
 body > header {
-  background-color: #fff;
+  background-color: #fce9e3;
   border-radius: 20px;
   display: flex;
   width: 80em;
@@ -34,16 +36,16 @@ body > header #menu {
   display: flex;
   width: 50%;
   align-items: stretch;
-  border-left: 1px solid #99b;
+  border-left: 1px solid #fce9e3;
 }
 body > header #menu a {
   flex: 1;
   text-align: center;
   padding-top: 2em;
-  border-right: 1px solid #99b;
+  border-right: 1px solid #fce9e3;
 }
 body > header a:hover {
-  background-color: #99b;
+  background-color: #fce9e3;
 }
 body > header ul {
   list-style: none;
@@ -51,7 +53,7 @@ body > header ul {
 body > header #user {
   margin-left: auto;
   flex: 0.2;
-  border-left: 1px solid #99b;
+  border-left: 1px solid #fce9e3;
 }
 body > header #user > a {
   display: block;
@@ -65,8 +67,8 @@ body > header #user ul {
   padding: 0;
   margin: 0;
   margin-left: -5em;
-  background-color: #fff;
-  border: 1px solid #99b;
+  background-color: #fce9e3;
+  border: 1px solid #fce9e3;
 
   z-index: 1;
 }
@@ -74,7 +76,7 @@ body > header #user ul li a {
   display: block;
   width: 10em;
   padding: 1em;
-  border-bottom: 1px solid #99b;
+  border-bottom: 1px solid #fce9e3;
 }
 body > header #user:hover ul {
   display: block;
@@ -82,7 +84,7 @@ body > header #user:hover ul {
 .buttonFormMessage {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #24527a;
-  background: #bbe4e9;
+  background: #fce9e3;
   margin-top: 10px;
   font-size: 16px;
   padding: 10px 20px 10px 20px;
@@ -92,7 +94,7 @@ body > header #user:hover ul {
 }
 .buttonFormMessage:hover {
   background: #24527a;
-  color: #bbe4e9;
+  color: #fce9e3;
 }
 #wrapper {
   display: flex;
@@ -100,7 +102,7 @@ body > header #user:hover ul {
   margin: 0 auto 2em auto;
 }
 #wrapper aside {
-  background-color: #fff;
+  background-color: #fce9e3;
   flex: 1;
   padding: 2em;
   border-radius: 1em;
@@ -118,7 +120,7 @@ body > header #user:hover ul {
   overflow-y: scroll;
 }
 #wrapper main article {
-  background-color: #fff;
+  background-color: #fce9e3;
   padding: 2em;
   margin-bottom: 1em;
   border-radius: 1em;
@@ -157,7 +159,7 @@ body > header #user:hover ul {
 }
 #wrapper.admin main {
   flex: 2;
-  background-color: #fff;
+  background-color: #fce9e3;
   border-radius: 0;
   padding: 0;
 }
