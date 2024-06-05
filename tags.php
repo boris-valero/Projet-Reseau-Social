@@ -52,7 +52,7 @@
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages comportant
                         le mot-clé <?php echo $tag["label"]; ?>
-                        (n° <?php echo $tag["id"]; ?>)
+                        <!--(n° <?php echo $tag["id"]; ?>)-->
                     </p>
                 </section>
             </aside>
@@ -96,7 +96,11 @@
                         </h3>
                         <address>
                             <a href="wall.php?user_id=<?php echo $post['author_name']; ?>">
+                            <strong>
+                                <em>
                             <?php echo $post["author_name"];?>
+                                </em>
+                            </strong>
                             </a>
                         </address>
                         <div>
@@ -105,7 +109,7 @@
                             </p>
                         </div>                                            
                         <footer>
-                            <small>♥<?php echo $post["like_number"]; ?></small>
+                            <small>❤️ <?php echo $post["like_number"]; ?></small>
                             <a href=""><strong>#<?php echo $post["taglist"]; ?></strong></a>,
                         </footer>
                     </article>
