@@ -98,9 +98,13 @@
                         </h3>
                         <address>
                             <a href="wall.php?user_id=<?php echo $post['user_id']; ?>">
-                            <?php
+                            <strong>
+                                <em>
+                                <?php
                             echo "Par " . $post['author_name'];
                             ?>
+                            </em>
+                            </strong>
                             </a>
                         </address>
                         <div>
@@ -110,7 +114,7 @@
                             </p>
                         </div>
                         <footer>
-                            <small>♥<?php
+                            <small>❤️ <?php
                             echo $post['like_number'];
                             ?> </small>
                             <a href=""><strong><?php echo "#", $post['taglist'] ?></strong></a>,
