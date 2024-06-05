@@ -55,8 +55,12 @@
                 {
                 ?>    
                 <article>
-                    <img src="user.jpg" alt="blason"/>
-                    <h3><?php echo $post["alias"]; ?></h3>
+                    <img src="chicken.jpg" alt="blason" class="user-picture"/>
+                    <h3>
+                        <strong>
+                            <?php echo $post["alias"]; ?>
+                        </strong>
+                    </h3>
                     <p><?php echo $post["id"]; ?></p>
                 </article> 
                 <?php } ?>
