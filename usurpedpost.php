@@ -34,7 +34,7 @@ session_start();
             <aside>
                 <h2>Présentation</h2>
                 <p>Sur cette page on peut poster un message en se faisant 
-                    passer pour quelqu'un d'autre </p>
+                    passer pour quelqu'un d'autre 🪄</p>
             </aside>
             <main>
                 <article>
