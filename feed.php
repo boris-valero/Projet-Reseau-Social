@@ -55,7 +55,11 @@
                     <p>Sur cette page vous trouverez tous les messages des utilisatrices
                         auxquel est abonnée l'utilisatrice 
                         <a href="wall.php?user_id=<?php echo $user['id']; ?>">
+                        <strong>
+                            <em>
                         <?php echo $user["alias"]; ?>
+                            </em>
+                        </strong>
                         </a>
                         (n° <?php echo $user["id"]; ?>)
                     </p>
